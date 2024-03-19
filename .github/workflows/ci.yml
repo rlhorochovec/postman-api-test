@@ -13,7 +13,7 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
 
       # Install the newman command-line utility, also install the html extra reporter
       - name: Install newman
