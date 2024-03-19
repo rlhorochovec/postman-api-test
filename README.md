@@ -23,7 +23,6 @@ Para rodar os testes, rode o seguinte comando
 
 ## Relatório dos testes
 [Visualizar](https://rlhorochovec.github.io/postman-api-test/)
-Execução local: ./newman
 
 ## Screenshots
 <img src="https://github.com/rlhorochovec/postman-api-test/blob/develop/Screenshots/api.png" width="600" /><br />
