@@ -44,9 +44,3 @@ jobs:
       - name: Run API tests
         run: |
           postman collection run "8842076-59400164-ddb8-4fc6-8f3e-017e6c08775f" --integration-id "152564-${{ github.run_id }}"
-         
-      - uses: actions/checkout@master
-      - uses: matt-ball/newman-action@master
-        with:
-          apiKey: ${{ secrets.POSTMAN_API_KEY }}
-          collection: 8842076-59400164-ddb8-4fc6-8f3e-017e6c08775f
