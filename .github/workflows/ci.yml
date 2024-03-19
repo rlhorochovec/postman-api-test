@@ -35,6 +35,14 @@ jobs:
         with:
           name: test-run-reports
           path: newman_report
+
+      - name: Publish Newman Report
+        if: always() # We want this to always run, even if test fail prior to this step running
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: newman_report
+          publish_branch: gh-pages
       
       - name: Install Postman CLI
         run: |
