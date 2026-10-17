@@ -10,11 +10,11 @@ jobs:
     steps:
       # Verifica (faz checkout) o seu repositório no $GITHUB_WORKSPACE para o job poder acessá-lo
       - name: Verificar repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Instala o Node.js no ambiente executor (runner)
       - name: Instalar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -34,7 +34,7 @@ jobs:
 
       # Faz o upload do conteúdo do diretório de resultados como artefato do workflow
       - name: Enviar detalhes da execução (Artefato)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-run-reports
           path: newman_report
@@ -42,7 +42,7 @@ jobs:
       # Publica o relatório gerado no GitHub Pages
       - name: Publicar relatório do Newman no GitHub Pages
         if: always() # Garante que execute mesmo se os testes falharem nas etapas anteriores
-        uses: peaceiris/actions-gh-pages@v3.6.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: newman_report
