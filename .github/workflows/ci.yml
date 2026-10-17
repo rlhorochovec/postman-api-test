@@ -5,7 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  automated-api-tests:
+  postman-api-test:
+    name: Execução do Postman
     runs-on: ubuntu-latest
     steps:
       # Verifica (faz checkout) o seu repositório no $GITHUB_WORKSPACE para o job poder acessá-lo
